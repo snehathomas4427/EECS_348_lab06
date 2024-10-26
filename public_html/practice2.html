@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <h1>EECS 348 Lab Seven Practice Two</h1>
+    <style>
+        .bg {background-color: rgb(221, 253, 255) ;}
+        .element{border: 2px solid black;}
+        
+    </style>
+</head>
+
+<body class="bg">
+    <p class="element" id="new_style"> Paragraph to be altered.</p>
+    <p>Border R(0-255): <input type="text" id="red_b" value=""></p>
+    <p>Border G(0-255): <input type="text" id="green_b" value=""></p>
+    <p>Border B(0-255): <input type="text" id="blue_b" value=""></p>
+    <p>Border Width: <input type="text" id="border_width" value=""></p>
+    <p>Background R(0-255): <input type="text" id="bg_r" value=""></p>
+    <p>Background G(0-255): <input type="text" id="bg_g" value=""></p>
+    <p>Background B(0-255): <input type="text" id="bg_b" value=""></p>
+    <button type="button" onclick="Click()">Change the color!</button>
+
+    <script>
+        function Click(){
+            red_b = document.getElementById("red_b").value;
+            green_b = document.getElementById("green_b").value;
+            blue_b = document.getElementById("blue_b").value;
+            border_width = document.getElementById("border_width").value;
+
+            bg_r = document.getElementById("bg_r").value;
+            bg_g = document.getElementById("bg_g").value;
+            bg_b = document.getElementById("bg_b").value;
+
+            //set new styles
+            new_style = document.getElementById("new_style");
+            new_style.style.border = `${border_width}px solid rgb(${red_b}, ${green_b}, ${blue_b})`;
+            new_style.style.backgroundColor = `rgb(${bg_r}, ${bg_g}, ${bg_b})`;
+
+        }
+    </script>
+
+</body>
+
+</html>
